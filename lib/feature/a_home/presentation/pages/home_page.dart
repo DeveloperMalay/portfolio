@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:web_portfolio/feature/b_services/presentation/pages/services_section.dart';
 
-import '../../../j_footer/presentation/pages/footet.dart';
+import '../../../k_footer/presentation/pages/footet.dart';
 import '../widgets/short_desc_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -70,35 +70,59 @@ class _HomePageState extends State<HomePage> {
                   SizedBox(width: 10.w),
                 ],
               ),
-              SizedBox(height: 40.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 500),
-                      transitionBuilder:
-                          (Widget child, Animation<double> animation) {
-                        return ScaleTransition(scale: animation, child: child);
-                      },
-                      child: ShortDescWidget(change: change)),
-                  Image.asset('assets/videos/v1.gif')
-                ],
+              SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 500),
+                            transitionBuilder:
+                                (Widget child, Animation<double> animation) {
+                              return ScaleTransition(
+                                  scale: animation, child: child);
+                            },
+                            child: ShortDescWidget(change: change)),
+                        Image.asset(
+                          'assets/videos/v1.gif',
+                          // height: 300.h,
+                          // fit: BoxFit.cover,
+                        )
+                      ],
+                    ),
+                  ],
+                ),
               ),
               SizedBox(height: 40.h),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text(
-                    'I Build Apps \nDesigned For Sales',
-                    style: Theme.of(context).textTheme.headlineLarge!
-                            .copyWith(fontSize: 45.r),
-                  ),
-                  Image.asset('assets/videos/v3.gif')
-                ],
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 50.w),
+                child: const ServicesSection(),
               ),
               SizedBox(height: 40.h),
-              const ServicesSection(),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 50.w),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'I Build Apps \nDesigned For Sales',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineLarge!
+                          .copyWith(fontSize: 45.r),
+                    ),
+                    Image.asset(
+                      'assets/videos/v3.gif',
+                      height: 450.h,
+                      fit: BoxFit.cover,
+                    )
+                  ],
+                ),
+              ),
               const FooterSection()
             ],
           ),
