@@ -40,9 +40,13 @@ class AppTheme {
       displayLarge: TextStyle(
           fontSize: 14.sp, fontWeight: FontWeight.bold, color: AppColors.black),
       displayMedium: TextStyle(
-          fontSize: 12.sp, fontWeight: FontWeight.w500, color: AppColors.greenColor),
+          fontSize: 12.sp,
+          fontWeight: FontWeight.w500,
+          color: AppColors.greenColor),
       displaySmall: TextStyle(
-          fontSize: 10.sp, fontWeight: FontWeight.w400, color: AppColors.greenColor),
+          fontSize: 10.sp,
+          fontWeight: FontWeight.w400,
+          color: AppColors.greenColor),
       headlineLarge: TextStyle(
           fontSize: 20.sp,
           fontWeight: FontWeight.w500,
@@ -56,15 +60,13 @@ class AppTheme {
           fontWeight: FontWeight.w500,
           color: AppColors.greenColor),
       titleLarge: TextStyle(
-          fontSize: 14.sp, fontWeight: FontWeight.w500, color: AppColors.black),
-      titleMedium: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.w400),
+          fontSize: 30.sp, fontWeight: FontWeight.bold, color: AppColors.black),
+      titleMedium: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
       titleSmall: TextStyle(fontSize: 12.sp, fontWeight: FontWeight.w400),
       bodyMedium: TextStyle(
-          color: AppColors.black,
-          fontSize: 12.sp,
-          fontWeight: FontWeight.normal),
+          color: AppColors.black, fontSize: 12.sp, fontWeight: FontWeight.w500),
       bodyLarge: TextStyle(
-          color: AppColors.black, fontSize: 14.sp, fontWeight: FontWeight.w400),
+          color: AppColors.black, fontSize: 14.sp, fontWeight:FontWeight.bold),
     ),
   );
 }

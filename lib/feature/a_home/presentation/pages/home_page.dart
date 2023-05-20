@@ -9,7 +9,6 @@ import '../../../c_projects/presentation/pages/projects_section.dart';
 import '../../../k_footer/presentation/pages/footet.dart';
 
 import '../widgets/short_desc_widget.dart';
-import 'expample.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -91,7 +90,6 @@ class _HomePageState extends State<HomePage> {
                                   scale: animation, child: child);
                             },
                             child: ShortDescWidget(change: change)),
-                          
                         Image.asset(
                           'assets/videos/v1.gif',
                           // height: 300.h,
@@ -102,11 +100,10 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
-              AutoFadeTransitionExample(),
               SizedBox(height: 40.h),
               FadeInDown(
                 child: Padding(
-                  padding: EdgeInsets.only(left: 50.w,right: 0),
+                  padding: EdgeInsets.only(left: 50.w, right: 0),
                   child: const ServicesSection(),
                 ),
               ),
