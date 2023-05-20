@@ -1,11 +1,15 @@
 import 'dart:async';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:web_portfolio/feature/b_services/presentation/pages/services_section.dart';
 
+import '../../../c_projects/presentation/pages/projects_section.dart';
 import '../../../k_footer/presentation/pages/footet.dart';
+
 import '../widgets/short_desc_widget.dart';
+import 'expample.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -87,6 +91,7 @@ class _HomePageState extends State<HomePage> {
                                   scale: animation, child: child);
                             },
                             child: ShortDescWidget(change: change)),
+                          
                         Image.asset(
                           'assets/videos/v1.gif',
                           // height: 300.h,
@@ -97,10 +102,13 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              AutoFadeTransitionExample(),
               SizedBox(height: 40.h),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 50.w),
-                child: const ServicesSection(),
+              FadeInDown(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 50.w,right: 0),
+                  child: const ServicesSection(),
+                ),
               ),
               SizedBox(height: 40.h),
               Padding(
@@ -123,6 +131,7 @@ class _HomePageState extends State<HomePage> {
                   ],
                 ),
               ),
+              ProjectsSection(),
               const FooterSection()
             ],
           ),
