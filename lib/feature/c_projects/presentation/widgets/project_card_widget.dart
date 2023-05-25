@@ -5,9 +5,13 @@ import '../../../../config/app_colors/app_colors.dart';
 
 class ProjectCardWidget extends StatelessWidget {
   const ProjectCardWidget(
-      {super.key, required this.title, required this.details});
+      {super.key,
+      required this.title,
+      required this.details,
+      required this.onTap});
   final String title;
   final String details;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -49,16 +53,19 @@ class ProjectCardWidget extends StatelessWidget {
               EdgeInsets.only(right: 10.w, left: 10.w, top: 5.h, bottom: 60.h),
           child: Text(details),
         ),
-        Container(
-          margin: EdgeInsets.symmetric(horizontal: 10.w),
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
-          decoration: BoxDecoration(
-              color: AppColors.white,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: AppColors.white)),
-          child: Text(
-            'Check Project',
-            style: Theme.of(context).textTheme.bodyMedium,
+        GestureDetector(
+          onTap: onTap,
+          child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 10.w),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
+            decoration: BoxDecoration(
+                color: AppColors.white,
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(color: AppColors.white)),
+            child: Text(
+              'Check Project',
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ),
         ),
         SizedBox(height: 30.h)
